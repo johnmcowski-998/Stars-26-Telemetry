@@ -1,0 +1,1 @@
+This is a program that I had the free version of claude create. Run the phone app on a phone in the car with the driver, and open the dashboard on your laptop. Pair the two with the code, then you can have location and timing dtat for the duration of your run. 
