@@ -271,7 +271,17 @@ function startGPS() {
 function initPeer() {
   // Generate a short readable ID
   const shortId = 'STARS-' + Math.random().toString(36).substr(2,6).toUpperCase();
-  peer = new Peer(shortId, {debug:0});
+  peer = new Peer(shortId, {
+    debug: 0,
+    config: {
+      iceServers: [
+        { urls: 'stun:stun.l.google.com:19302' },
+        { urls: 'stun:stun1.l.google.com:19302' },
+        { urls: 'turn:openrelay.metered.ca:80', username: 'openrelayproject', credential: 'openrelayproject' },
+        { urls: 'turn:openrelay.metered.ca:443', username: 'openrelayproject', credential: 'openrelayproject' },
+      ]
+    }
+  });
 
   peer.on('open', id => {
     myPeerEl.textContent = id;
